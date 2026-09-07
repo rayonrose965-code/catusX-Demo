@@ -1,3 +1,4 @@
+```lua
 -- CatusX - Safe Demo Key UI
 -- Fictional/demo UI only. No exploit functionality.
 
@@ -5,7 +6,9 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
 local DEMO_KEY = "CATUS-DEMO"
-local KEY_LINK = "https://example.com/get-key"
+
+-- PUT YOUR LINK BETWEEN THE QUOTES
+local KEY_LINK = "PASTE-YOUR-LINK-HERE"
 
 local gui = Instance.new("ScreenGui")
 gui.Name = "CatusX_Demo"
@@ -121,20 +124,20 @@ verify.MouseButton1Click:Connect(function()
 	end
 end)
 
--- Safe GET KEY behavior.
--- Opens the supplied link in supported environments.
+-- GET KEY
 getKey.MouseButton1Click:Connect(function()
 	status.Text = "Demo key: " .. DEMO_KEY
 	status.TextColor3 = Color3.fromRGB(180, 180, 190)
 
 	if setclipboard then
-		setclipboard(KEY_LINK)
+		setclipboard(https://rblx.pk/0x5XCCDV)
 		status.Text = "Link copied!\nDemo key: " .. DEMO_KEY
+	else
+		status.Text = "Key link:\n"https://rblx.pk/0x5XCCDV .. KEY_LINK
 	end
 end)
 
--- Example group-error display.
--- This is intentionally only a visual/demo message.
+-- Example group-error display
 local function showGroupError()
 	status.Text = "ERROR: User not in group"
 	status.TextColor3 = Color3.fromRGB(255, 100, 100)
@@ -142,3 +145,4 @@ end
 
 -- Example:
 -- showGroupError()
+```
